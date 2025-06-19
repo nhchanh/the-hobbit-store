@@ -1,0 +1,14 @@
+flowchart TD
+    A["a-ui (Next.js UI)"] -- "REST API" --> B["b-api"]
+    B -- "DTOs, OpenAPI" --> D["a-product-service"]
+    B -- "DTOs, OpenAPI" --> E["b-review-service"]
+    D -- "Core Logic" --> C["c-core"]
+    E -- "Core Logic" --> C
+    D -- "DB Access (Spring DAO)" --> F[("PostgreSQL")]
+    E -- "DB Access (Spring DAO)" --> F
+    D -- "Flyway Migrations" --> F
+    E -- "Flyway Migrations" --> F
+    G["e-e2e-test"] -- "Karate Tests" --> D
+    G -- "Karate Tests" --> E
+    H["f-pns-test"] -- "Perf Tests" --> D
+    H -- "Perf Tests" --> E

@@ -1,0 +1,18 @@
+flowchart LR
+    Customer((Customer))
+    Cart((Cart))
+    Product((Product))
+    Inventory((Inventory))
+    Promotion((Promotion))
+    PurchaseOrder((Purchase Order))
+    Payment((Payment))
+    Review((Review))
+
+    Customer -- adds to --> Cart
+    Cart -- contains --> Product
+    Product -- stock checked --> Inventory
+    Cart -- applies --> Promotion
+    Cart -- checkout --> PurchaseOrder
+    PurchaseOrder -- paid by --> Payment
+    Customer -- reviews --> Review
+    Review -- about --> Product

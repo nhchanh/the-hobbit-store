@@ -1,0 +1,11 @@
+flowchart TB
+    UI["Web UI / API Controller"]
+    AppService["Application Service"]
+    Domain["Domain Model (Aggregates, Entities, Value Objects)"]
+    Repo["Repository (Spring DAO)"]
+    Infra["Infrastructure (DB, External APIs)"]
+
+    UI --> AppService
+    AppService --> Domain
+    AppService --> Repo
+    Repo --> Infra

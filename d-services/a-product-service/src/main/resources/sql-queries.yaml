@@ -1,0 +1,58 @@
+cart.selectOneById: >
+  SELECT id, customer_id, status, created_at, updated_at
+  FROM CART
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND id = (?)::ulid;
+
+cart.insert: >
+  INSERT INTO CART (environment_id, tenant_id, id, customer_id, status)
+    VALUES ((?)::env_id, (?)::ulid, (?)::ulid, (?)::ulid, ?);
+
+cart.item.selectCartItemsByCartId: >
+  SELECT id, cart_id, product_id, quantity, item_price
+  FROM CART_ITEM
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND cart_id = (?)::ulid;
+
+cart.item.insert: >
+  INSERT INTO CART_ITEM (environment_id, tenant_id, id, cart_id, product_id, quantity, item_price)
+    VALUES ((?)::env_id, (?)::ulid, (?)::ulid, (?)::ulid, (?)::ulid, ?, ?);
+
+cart.update: >
+  UPDATE CART
+  SET status = ?, updated_at = NOW()
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND id = (?)::ulid;
+
+cart.item.update: >
+  UPDATE CART_ITEM
+  SET quantity = ?, item_price = ?, updated_at = NOW()
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND id = (?)::ulid;
+
+product.insert: >
+  INSERT INTO product (environment_id, tenant_id, id, name, description, rating, price, category_id)
+    VALUES ((:environment_id)::env_id, (:tenant_id)::ulid, (:product_id)::ulid, :name, :description, :rating, :price, :category_id);
+  INSERT INTO inventory (environment_id, tenant_id, product_id, stock_quantity, restock_threshold, last_restocked)
+    VALUES ((:environment_id)::env_id, (:tenant_id)::ulid, (:product_id)::ulid, 0, :restock_threshold, NOW());
+
+product.update: >
+  UPDATE product
+  SET name = ?, description = ?, rating = ?, price = ?, category_id = ?
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND id = (?)::ulid;
+
+product.selectOneById: >
+  SELECT id, name, description, rating, price, category_id
+  FROM product
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND id = (?)::ulid;
+
+inventory.insert: >
+  INSERT INTO inventory (environment_id, tenant_id, product_id, stock_quantity, restock_threshold, last_restocked)
+    VALUES (?::env_id, (?)::ulid, (?)::ulid, ?, ?, NOW());
+
+inventory.update.stock.quantity: >
+  UPDATE inventory
+  SET stock_quantity = ?, last_restocked = NOW()
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND product_id = (?)::ulid;
+
+inventory.selectOneByProductId: >
+  SELECT id, product_id, stock_quantity, restock_threshold, last_restocked
+  FROM inventory
+  WHERE environment_id = (?)::env_id AND tenant_id = (?)::ulid AND product_id = (?)::ulid;
+

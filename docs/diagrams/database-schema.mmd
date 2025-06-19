@@ -1,0 +1,166 @@
+erDiagram
+    ENVIRONMENT {
+        env_id
+        name
+        description
+    }
+
+    TENANT {
+        tenant_id
+        name
+        description
+    }
+
+    CUSTOMER {
+        customer_id
+        env_id
+        tenant_id
+        first_name
+        last_name
+        email
+        phone
+        address
+    }
+
+    CATEGORY {
+        category_id
+        env_id
+        tenant_id
+        name
+        description
+    }
+
+    PRODUCT {
+        product_id
+        env_id
+        tenant_id
+        category_id
+        name
+        description
+        price
+        rating
+    }
+
+    PRODUCT_IMAGE {
+        image_id
+        env_id
+        tenant_id
+        product_id
+        url
+    }
+
+    INVENTORY {
+        inventory_id
+        env_id
+        tenant_id
+        product_id
+        stock
+    }
+
+    CART {
+        cart_id
+        env_id
+        tenant_id
+        customer_id
+        status
+    }
+
+    CART_ITEM {
+        cart_item_id
+        env_id
+        tenant_id
+        cart_id
+        product_id
+        quantity
+        total_price
+    }
+
+    WISHLIST {
+        wishlist_id
+        env_id
+        tenant_id
+        customer_id
+    }
+
+    WISHLIST_ITEM {
+        wishlist_item_id
+        env_id
+        tenant_id
+        wishlist_id
+        product_id
+    }
+
+    PROMOTION {
+        promotion_id
+        env_id
+        tenant_id
+        name
+        description
+        discount
+    }
+
+    PURCHASE_ORDER {
+        order_id
+        env_id
+        tenant_id
+        cart_id
+        customer_id
+        total_amount
+        status
+    }
+
+    PAYMENT {
+        payment_id
+        env_id
+        tenant_id
+        order_id
+        amount
+        status
+    }
+
+    ORDER_HISTORY {
+        history_id
+        env_id
+        tenant_id
+        order_id
+        status
+        changed_at
+    }
+
+    REVIEW {
+        review_id
+        env_id
+        tenant_id
+        product_id
+        customer_id
+        rating
+        comment
+        created_at
+    }
+
+    ENVIRONMENT ||--o{ TENANT : "has >"
+    TENANT ||--o{ CUSTOMER : "has >"
+    TENANT ||--o{ CATEGORY : "has >"
+    TENANT ||--o{ PRODUCT : "has >"
+    TENANT ||--o{ INVENTORY : "has >"
+    TENANT ||--o{ CART : "has >"
+    TENANT ||--o{ WISHLIST : "has >"
+    TENANT ||--o{ PROMOTION : "has >"
+    TENANT ||--o{ PURCHASE_ORDER : "has >"
+    TENANT ||--o{ PAYMENT : "has >"
+    TENANT ||--o{ ORDER_HISTORY : "has >"
+    TENANT ||--o{ REVIEW : "has >"
+    PRODUCT ||--o{ PRODUCT_IMAGE : "has >"
+    PRODUCT ||--o{ INVENTORY : "has >"
+    PRODUCT ||--o{ CART_ITEM : "in >"
+    PRODUCT ||--o{ WISHLIST_ITEM : "in >"
+    PRODUCT ||--o{ REVIEW : "reviewed >"
+    CATEGORY ||--o{ PRODUCT : "has >"
+    CUSTOMER ||--o{ CART : "owns >"
+    CUSTOMER ||--o{ WISHLIST : "owns >"
+    CUSTOMER ||--o{ REVIEW : "writes >"
+    CART ||--o{ CART_ITEM : "contains >"
+    WISHLIST ||--o{ WISHLIST_ITEM : "contains >"
+    CART ||--o{ PURCHASE_ORDER : "finalizes >"
+    PURCHASE_ORDER ||--o{ PAYMENT : "paid by >"
+    PURCHASE_ORDER ||--o{ ORDER_HISTORY : "tracked by >"

@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group = 'chanhnguyen.hoppy.thehobbitstore'
+version = '1.0.0-SNAPSHOT'
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+    test {
+        useTestNG()
+    }
+}

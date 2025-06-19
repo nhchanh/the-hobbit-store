@@ -1,0 +1,10 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'chanhnguyen.hoppy.thehobbitstore.core'
+version = rootProject.version
+
+dependencies {
+    // Pure Java core module, no external dependencies by default
+}

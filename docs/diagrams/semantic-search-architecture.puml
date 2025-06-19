@@ -1,0 +1,9 @@
+@startuml
+package "Semantic Search" {
+  [API Layer] --> [Search Service]
+  [Search Service] --> [Vector Index]
+  [Search Service] --> [Full-Text Index]
+  [Search Service] --> [PostgreSQL DB]
+}
+[User] --> [API Layer]
+@enduml

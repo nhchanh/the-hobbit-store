@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant U as User
+    participant UI as Web UI
+    participant API as API
+    participant PS as Product Service
+    participant DB as PostgreSQL
+    participant PG as Payment Gateway
+
+    U->>UI: Add product to cart
+    UI->>API: POST /cart/add
+    API->>PS: addProductToCart()
+    PS->>DB: update cart, check inventory
+    DB-->>PS: cart updated
+    PS-->>API: cart response
+    API-->>UI: cart updated
+    U->>UI: Checkout
+    UI->>API: POST /cart/checkout
+    API->>PS: checkoutCart()
+    PS->>DB: create order, update inventory
+    PS->>PG: process payment
+    PG-->>PS: payment confirmation
+    PS->>DB: update order, payment status
+    PS-->>API: order confirmation
+    API-->>UI: show order confirmation

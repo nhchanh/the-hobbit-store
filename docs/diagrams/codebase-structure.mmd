@@ -1,0 +1,19 @@
+flowchart TD
+    A["a-ui (Next.js UI)"]
+    B["b-api (API contracts, DTOs, OpenAPI)"]
+    C["c-core (Shared logic, value objects)"]
+    D1["a-product-service (Product, Cart, Inventory)"]
+    D2["b-review-service (Reviews)"]
+    E["e-e2e-test (E2E tests)"]
+    F["f-pns-test (Perf tests)"]
+
+    A <--> B
+    D1 <--> B
+    D2 <--> B
+    D1 <--> C
+    D2 <--> C
+    E --> B
+    E --> D1
+    E --> D2
+    F --> D1
+    F --> D2

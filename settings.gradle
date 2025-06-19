@@ -1,0 +1,2 @@
+rootProject.name = 'the-hobbit-store'
+include ':b-api', ':c-core', ':d-services:a-product-service', ':d-services:b-review-service', ':e-e2e-test', ':f-pns-test'

@@ -1,0 +1,20 @@
+flowchart LR
+    User((User))
+    Admin((Admin))
+    PaymentGateway((Payment Gateway))
+    NotificationService((Notification Service))
+    HobbitUI["a-ui (Next.js UI)"]
+    HobbitAPI["b-api (REST API)"]
+    ProductService["a-product-service"]
+    ReviewService["b-review-service"]
+    DB[(PostgreSQL DB)]
+
+    User -- "browses, shops" --> HobbitUI
+    Admin -- "manages" --> HobbitUI
+    HobbitUI -- "REST calls" --> HobbitAPI
+    HobbitAPI -- "delegates" --> ProductService
+    HobbitAPI -- "delegates" --> ReviewService
+    ProductService -- "reads/writes" --> DB
+    ReviewService -- "reads/writes" --> DB
+    ProductService -- "payment requests" --> PaymentGateway
+    ProductService -- "notifications" --> NotificationService

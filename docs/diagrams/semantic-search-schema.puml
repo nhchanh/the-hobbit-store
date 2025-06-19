@@ -1,0 +1,28 @@
+@startuml
+entity "product" as product {
+  product_id : ULID
+  env_id : VARCHAR(10)
+  tenant_id : ULID
+  name : VARCHAR(100)
+  description : VARCHAR(255)
+  embedding : VECTOR
+  ...
+}
+entity "review" as review {
+  review_id : ULID
+  product_id : ULID
+  env_id : VARCHAR(10)
+  tenant_id : ULID
+  rating : NUMERIC(2,1)
+  comment : VARCHAR(255)
+  embedding : VECTOR
+  ...
+}
+entity "category" as category {
+  category_id : ULID
+  name : VARCHAR(50)
+  ...
+}
+product --o{ review : "has >"
+product --o{ category : "belongs >"
+@enduml
