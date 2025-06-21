@@ -1,4 +1,4 @@
-package chanhnguyen.hoppy.product.app.mapper;
+package chanhnguyen.thehobbitstore.product.app.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

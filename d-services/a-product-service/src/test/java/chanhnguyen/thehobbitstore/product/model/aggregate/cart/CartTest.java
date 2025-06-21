@@ -1,9 +1,7 @@
-package chanhnguyen.hoppy.product.model.aggregate.cart;
+package chanhnguyen.thehobbitstore.product.model.aggregate.cart;
 
 import org.junit.jupiter.api.Test;
 
-import chanhnguyen.thehobbitstore.product.model.aggregate.cart.Cart;
-import chanhnguyen.thehobbitstore.product.model.aggregate.cart.CartItem;
 import chanhnguyen.thehobbitstore.product.model.valueobject.cart.CartId;
 import chanhnguyen.thehobbitstore.product.model.valueobject.cart.CartItemId;
 import chanhnguyen.thehobbitstore.product.model.valueobject.cart.ItemPrice;

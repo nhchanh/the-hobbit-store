@@ -1,4 +1,4 @@
-package chanhnguyen.hoppy.product.app;
+package chanhnguyen.thehobbitstore.product.app;
 
 import org.flywaydb.core.Flyway;
 import org.slf4j.LoggerFactory;

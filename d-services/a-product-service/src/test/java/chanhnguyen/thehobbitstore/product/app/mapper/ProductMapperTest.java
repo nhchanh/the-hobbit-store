@@ -1,4 +1,4 @@
-package chanhnguyen.hoppy.product.app.mapper;
+package chanhnguyen.thehobbitstore.product.app.mapper;
 
 import chanhnguyen.thehobbitstore.api.dto.ProductDto;
 import chanhnguyen.thehobbitstore.product.app.controller.mapper.ProductMapper;

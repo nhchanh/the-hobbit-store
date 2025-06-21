@@ -1,4 +1,4 @@
-package chanhnguyen.hoppy.product.app.controller;
+package chanhnguyen.thehobbitstore.product.app.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -22,7 +22,7 @@ public class KarateTestRunner {
 			System.setProperty("spring.datasource.username", postgres.getUsername());
 			System.setProperty("spring.datasource.password", postgres.getPassword());
 
-			Results results = Runner.path("classpath:chanhnguyen/hoppy/product/app/controller/featureFiles")
+			Results results = Runner.path("classpath:chanhnguyen/thehobbitstore/product/app/controller/featureFiles")
 					.outputCucumberJson(true)
 					.outputHtmlReport(true)
 					.debugMode(true)
