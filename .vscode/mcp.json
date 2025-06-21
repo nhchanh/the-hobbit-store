@@ -1,0 +1,24 @@
+{
+	"servers": {
+		"mcp-server-time": {
+			"command": "python",
+			"args": [
+				"-m",
+				"mcp_server_time",
+				"--local-timezone=America/Los_Angeles"
+			],
+			"env": {}
+		},
+		"postgres": {
+			"command": "docker",
+			"args": [
+				"run",
+				"-i",
+				"--rm",
+				"mcp/postgres",
+				"postgresql://shopping-cart-user:password@localhost:5432/online-shopping-db?currentSchema=public"
+			],
+			"env": {}
+		}
+	}
+}
