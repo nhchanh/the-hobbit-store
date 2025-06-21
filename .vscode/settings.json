@@ -1,0 +1,14 @@
+{
+	"java.compile.nullAnalysis.mode": "automatic",
+	"java.dependency.packagePresentation": "hierarchical",
+	"java.configuration.updateBuildConfiguration": "automatic",
+	"cSpell.words": [
+		"jdbc",
+		"thehobbitstore"
+	],
+	"java.debug.settings.onBuildFailureProceed": true,
+	"java.jdt.ls.java.home": "/opt/homebrew/opt/openjdk",
+	"maven.terminal.useJavaHome": true,
+	"java.import.gradle.java.home": "/opt/homebrew/opt/openjdk",
+	"java.project.explorer.showNonJavaResources": false
+}

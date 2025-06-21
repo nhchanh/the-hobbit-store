@@ -50,9 +50,6 @@ coverage/
 Thumbs.db
 Desktop.ini
 
-# VS Code
-.vscode/
-
 # Flyway
 flyway.conf
 
