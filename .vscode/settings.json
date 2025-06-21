@@ -4,6 +4,7 @@
 	"java.configuration.updateBuildConfiguration": "automatic",
 	"cSpell.words": [
 		"jdbc",
+		"Testcontainers",
 		"thehobbitstore"
 	],
 	"java.debug.settings.onBuildFailureProceed": true,

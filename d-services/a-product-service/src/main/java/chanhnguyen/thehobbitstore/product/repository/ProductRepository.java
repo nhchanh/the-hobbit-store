@@ -1,24 +1,15 @@
 package chanhnguyen.thehobbitstore.product.repository;
 
 import lombok.AllArgsConstructor;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.boot.autoconfigure.batch.BatchProperties.Jdbc;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.fasterxml.jackson.databind.JsonSerializable.Base;
 
 import chanhnguyen.thehobbitstore.product.app.config.Environment;
 import chanhnguyen.thehobbitstore.product.app.config.Tenant;
-import chanhnguyen.thehobbitstore.product.model.aggregate.cart.Cart;
 import chanhnguyen.thehobbitstore.product.model.aggregate.product.Product;
-import chanhnguyen.thehobbitstore.product.model.valueobject.CreatedAt;
-import chanhnguyen.thehobbitstore.product.model.valueobject.UpdatedAt;
-import chanhnguyen.thehobbitstore.product.model.valueobject.cart.CartId;
-import chanhnguyen.thehobbitstore.product.model.valueobject.cart.Status;
-import chanhnguyen.thehobbitstore.product.model.valueobject.customer.CustomerId;
 import chanhnguyen.thehobbitstore.product.model.valueobject.product.CategoryId;
 import chanhnguyen.thehobbitstore.product.model.valueobject.product.ProductDescription;
 import chanhnguyen.thehobbitstore.product.model.valueobject.product.ProductId;

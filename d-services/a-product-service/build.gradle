@@ -46,6 +46,7 @@ dependencies {
     implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
     implementation 'de.huxhorn.sulky:de.huxhorn.sulky.ulid:8.3.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.6.0'
+    testImplementation 'org.testng:testng:7.10.2'
     testImplementation 'org.mockito:mockito-core:5.2.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.4.5'
     testImplementation 'com.intuit.karate:karate-junit5:1.4.1'
@@ -64,7 +65,7 @@ sourceSets {
 }
 
 test {
-    useTestNG()
+    useJUnitPlatform()
     systemProperty "karate.options", System.properties.getProperty("karate.options")
     systemProperty "karate.env", System.properties.getProperty("karate.env")
     outputs.upToDateWhen { false }
