@@ -1,8 +1,8 @@
 package chanhnguyen.hoppy.product.app.mapper;
 
-import chanhnguyen.hoppy.product.app.controller.mapper.InventoryMapper;
-import chanhnguyen.hoppy.product.model.aggregate.inventory.Inventory;
-import chanhnguyen.hoppy.thehobbitstore.dto.InventoryDto;
+import chanhnguyen.thehobbitstore.api.dto.InventoryDto;
+import chanhnguyen.thehobbitstore.product.app.controller.mapper.InventoryMapper;
+import chanhnguyen.thehobbitstore.product.model.aggregate.inventory.Inventory;
 import de.huxhorn.sulky.ulid.ULID;
 import org.junit.jupiter.api.Test;
 import java.time.Instant;

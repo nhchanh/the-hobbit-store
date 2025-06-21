@@ -4,19 +4,33 @@ plugins{
     id 'io.spring.dependency-management' version '1.1.4'
 }
 
-group = 'chanhnguyen.hoppy.thehobbitstore.service'
+group = 'chanhnguyen.hoppy.thehobbitstore'
 version = rootProject.version
 
 repositories {
     mavenCentral()
+    maven {
+        name = 'Sonatype Snapshots'
+        url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+compileJava {
+    options.annotationProcessorPath = configurations.annotationProcessor
 }
 
 dependencies {
     implementation project(':c-core')
     implementation project(':b-api')
 
-    compileOnly 'org.projectlombok:lombok:1.18.32'
-    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
     implementation 'org.apache.commons:commons-lang3:3.14.0'

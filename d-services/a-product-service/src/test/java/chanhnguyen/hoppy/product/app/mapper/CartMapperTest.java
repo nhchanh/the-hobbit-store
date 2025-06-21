@@ -9,20 +9,20 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import chanhnguyen.hoppy.product.app.controller.mapper.CartMapper;
-import chanhnguyen.hoppy.product.model.aggregate.cart.Cart;
-import chanhnguyen.hoppy.product.model.aggregate.cart.CartItem;
-import chanhnguyen.hoppy.product.model.valueobject.CreatedAt;
-import chanhnguyen.hoppy.product.model.valueobject.UpdatedAt;
-import chanhnguyen.hoppy.product.model.valueobject.cart.CartId;
-import chanhnguyen.hoppy.product.model.valueobject.cart.CartItemId;
-import chanhnguyen.hoppy.product.model.valueobject.cart.ItemPrice;
-import chanhnguyen.hoppy.product.model.valueobject.cart.Quantity;
-import chanhnguyen.hoppy.product.model.valueobject.cart.Status;
-import chanhnguyen.hoppy.product.model.valueobject.customer.CustomerId;
-import chanhnguyen.hoppy.product.model.valueobject.product.ProductId;
-import chanhnguyen.hoppy.thehobbitstore.dto.CartDto;
-import chanhnguyen.hoppy.thehobbitstore.dto.CartItemDto;
+import chanhnguyen.thehobbitstore.api.dto.CartDto;
+import chanhnguyen.thehobbitstore.api.dto.CartItemDto;
+import chanhnguyen.thehobbitstore.product.app.controller.mapper.CartMapper;
+import chanhnguyen.thehobbitstore.product.model.aggregate.cart.Cart;
+import chanhnguyen.thehobbitstore.product.model.aggregate.cart.CartItem;
+import chanhnguyen.thehobbitstore.product.model.valueobject.CreatedAt;
+import chanhnguyen.thehobbitstore.product.model.valueobject.UpdatedAt;
+import chanhnguyen.thehobbitstore.product.model.valueobject.cart.CartId;
+import chanhnguyen.thehobbitstore.product.model.valueobject.cart.CartItemId;
+import chanhnguyen.thehobbitstore.product.model.valueobject.cart.ItemPrice;
+import chanhnguyen.thehobbitstore.product.model.valueobject.cart.Quantity;
+import chanhnguyen.thehobbitstore.product.model.valueobject.cart.Status;
+import chanhnguyen.thehobbitstore.product.model.valueobject.customer.CustomerId;
+import chanhnguyen.thehobbitstore.product.model.valueobject.product.ProductId;
 
 public class CartMapperTest {
     private final CartMapper mapperUnderTest = CartMapper.INSTANCE;

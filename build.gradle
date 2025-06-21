@@ -9,15 +9,32 @@ version = '1.0.0-SNAPSHOT'
 allprojects {
     repositories {
         mavenCentral()
+		maven {
+			name = 'Sonatype Snapshots'
+			url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+		}
     }
 }
 
 subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+    }
+
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
+        options.compilerArgs << '-parameters'
     }
+
+    compileJava {
+        options.annotationProcessorPath = configurations.annotationProcessor
+    }
+
     test {
         useTestNG()
     }

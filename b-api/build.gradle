@@ -2,14 +2,13 @@ plugins {
     id 'java'
 }
 
-group = 'chanhnguyen.hoppy.thehobbitstore.api'
+group = 'chanhnguyen.thehobbitstore.api'
 version = rootProject.version
 
-dependencies {
-    implementation project(':c-core')
 
-    compileOnly 'org.projectlombok:lombok:1.18.32'
-    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
     implementation 'org.springframework.boot:spring-boot-starter-web:3.4.5'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
     implementation 'jakarta.validation:jakarta.validation-api:3.0.2'

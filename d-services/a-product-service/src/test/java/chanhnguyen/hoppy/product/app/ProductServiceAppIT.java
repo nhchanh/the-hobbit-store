@@ -8,6 +8,8 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
+import chanhnguyen.thehobbitstore.product.app.ProductServiceApp;
+
 @SpringBootTest
 @Testcontainers
 public class ProductServiceAppIT {

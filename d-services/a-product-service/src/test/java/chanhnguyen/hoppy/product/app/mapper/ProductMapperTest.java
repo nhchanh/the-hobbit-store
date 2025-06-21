@@ -1,8 +1,8 @@
 package chanhnguyen.hoppy.product.app.mapper;
 
-import chanhnguyen.hoppy.product.app.controller.mapper.ProductMapper;
-import chanhnguyen.hoppy.product.model.aggregate.product.Product;
-import chanhnguyen.hoppy.thehobbitstore.dto.ProductDto;
+import chanhnguyen.thehobbitstore.api.dto.ProductDto;
+import chanhnguyen.thehobbitstore.product.app.controller.mapper.ProductMapper;
+import chanhnguyen.thehobbitstore.product.model.aggregate.product.Product;
 
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
