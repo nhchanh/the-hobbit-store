@@ -194,6 +194,42 @@ I want to:
 	- CREATE DOMAIN env_id AS VARCHAR(10) CONSTRAINT env_id_10_chars_length_and_uppercase_check CHECK (UPPER(VALUE) = VALUE AND LENGTH(VALUE) >= 5);
 
 
+## **The structure of the submodule #codebase/a-ui**
+- The #codebase/ is a Next.js application
+- It is designed to provide a user-friendly web interface for displaying product categories and managing the shopping cart.
+- The application is built using Next.js, React, and TypeScript.
+- The application follows best practices for Next.js development, static site generation, and API routes.
+- The application is structured to separate concerns between components, pages, and API routes.
+- The application uses **Tailwind CSS** for styling and responsive design.
+- The application uses **Axios** for making API requests to the backend.
+- The application uses **React Query** for data fetching and caching.
+- The application uses **Jest** and **React Testing Library** for unit and integration testing.
+- The application is configured to run on port 3000 by default.
+- The application is configured to use the **TypeScript** compiler with strict type checking.
+- The application is configured to use **ESLint** and **Prettier** for code quality and formatting.
+- The application is configured to use **Redux** for state management.
+- The application is designed to use Domain-Driven Design (DDD) principles to model the business domain and enforce boundaries between different contexts.
+- The application is designed to be modular and extensible, allowing for easy addition of new features and components.
+- The application is designed to clear lifecycle management for state, components, ensuring proper cleanup and resource management.
+- The application is designed to have different lifecycle states to manage the user experience effectively:
+  - **OnInit**: When the application is loading and initializing.
+  - **OnLoading**: When data is being fetched from the API.
+  - **OnClosing**: When the application is closing or navigating away.
+  - **OnSubmitting**: When data is being submitted to the API.
+- The application is configured to use **i18next** for internationalization and localization.
+- The application is structured with the following directories:
+  - `components`: Contains reusable React components.
+  - `pages`: Contains Next.js pages and API routes.
+  - `styles`: Contains global styles and Tailwind CSS configuration.
+  - `utils`: Contains utility functions and constants.
+  - `hooks`: Contains custom React hooks for managing state and side effects.
+  - `context`: Contains React context providers for global state management.
+  - `services`: Contains API service functions for making requests to the backend.
+  - `tests`: Contains unit and integration tests for components and pages.
+  - `model`: Contains domain models and value objects for the application. this contain business logic and data structures.
+
+
+
 ### **API Development**
 - Generate **OpenAPI specifications** for APIs and ensure they are well-documented.
 - Use **Swagger** for API documentation and testing.
