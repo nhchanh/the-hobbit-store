@@ -65,12 +65,20 @@ npm run dev
 #### 404 Error in Browser
 **Symptoms**: Browser shows "404 - This page could not be found"
 
+**Root Cause**: This project uses Next.js **Pages Router** (not App Router) due to configuration conflicts with the App Router setup.
+
 **Solutions**:
 1. ✅ Verify the correct URL: http://localhost:3000
 2. ✅ Check terminal for the actual port (might be 3001, 3002, etc.)
 3. ✅ Ensure development server is running (`npm run dev`)
 4. ✅ Clear browser cache or try incognito mode
 5. ✅ Restart the development server (Ctrl+C, then `npm run dev`)
+6. ✅ **Important**: Ensure pages are in `/pages/` directory (not `/src/app/`)
+
+**Technical Note**: If you see persistent 404s, verify that:
+- The homepage exists at `/pages/index.tsx`
+- The `next.config.js` doesn't have conflicting experimental features
+- No `/src/app/` directory exists (which would enable App Router)
 
 #### Port Already in Use
 **Symptoms**: Error message about port 3000 being in use
@@ -103,7 +111,6 @@ npm run dev
 ```
 a-ui/
 ├── src/
-│   ├── pages/           # Next.js pages (using pages router)
 │   ├── components/      # React components (atomic design)
 │   ├── domain/          # Domain models and business logic
 │   ├── application/     # Application services and DTOs
@@ -111,13 +118,16 @@ a-ui/
 │   ├── store/           # Redux store configuration
 │   ├── hooks/           # Custom React hooks
 │   └── types/           # TypeScript type definitions
-├── pages/               # Next.js pages directory
+├── pages/               # Next.js pages directory (PAGES ROUTER)
+│   └── index.tsx        # Homepage - THIS IS IMPORTANT!
 ├── public/              # Static assets
 ├── next.config.js       # Next.js configuration
 ├── tailwind.config.js   # Tailwind CSS configuration
 ├── tsconfig.json        # TypeScript configuration
 └── package.json         # Dependencies and scripts
 ```
+
+**Important**: This project uses **Pages Router** (not App Router). The homepage must be at `/pages/index.tsx`.
 
 ## 🎯 Next Steps
 
