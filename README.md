@@ -3,6 +3,7 @@
 ## High Level Description
 
 The Hobbit Online Store is a scalable, modular e-commerce platform designed for modern web and enterprise environments. It provides robust shopping cart management, product catalog, inventory, customer management, order processing, promotions, and review features. The system is built using Java 24, Spring Boot, Gradle, PostgreSQL, Flyway, Karate, and follows Domain-Driven Design (DDD) principles. It supports API-first development, multi-tenancy, localization, and is optimized for performance, security, and maintainability.
+
 - **Key Features:**
   - Shopping cart management (add, remove, update items, apply discounts)
   - Product, inventory, and review management
@@ -10,10 +11,42 @@ The Hobbit Online Store is a scalable, modular e-commerce platform designed for 
   - Order, payment, and order history tracking (TBD)
   - Multi-tenancy, multi-environment, and multi-device/browser support
 
+## 🚀 Quick Start - Web UI
+
+To start the web UI application in the `a-ui` sub-module:
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Steps
+1. **Navigate to the UI module:**
+   ```bash
+   cd a-ui
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   - Visit: **http://localhost:3000**
+   - The app uses Next.js with hot reloading
+
+### Troubleshooting UI Issues
+- Ensure you're on port 3000 (check terminal output)
+- Clear browser cache if seeing 404 errors
+- Restart dev server if needed: `Ctrl+C` then `npm run dev`
 
 ## Module Overviews
 
-- **a-ui**: Next.js web UI for customer-facing storefront and admin management. (TBD)
+- **a-ui**: Next.js web UI for customer-facing storefront and admin management. ✅ **Working**
 - **b-api**: Java API module defining RESTful endpoints, DTOs, and OpenAPI/Swagger documentation.
 - **c-core**: Pure Java core utilities and shared logic, no I/O dependencies.
 - **d-services**:

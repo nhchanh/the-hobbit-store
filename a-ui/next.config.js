@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    typedRoutes: true,
-  },
+  // experimental: {
+  //   typedRoutes: true,
+  // },
   images: {
     domains: ['localhost', 'hobbit-store.local'],
     formats: ['image/webp', 'image/avif'],
