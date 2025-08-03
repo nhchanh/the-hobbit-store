@@ -1,52 +1,30 @@
-# The Hobbit Online Store - UI Module
+# The Hobbit Online Store - UI
 
-A modern, type-safe Next.js frontend application implementing Domain-Driven Design (DDD) principles with React Query for server state management and Redux Toolkit for client state management.
+Next.js frontend application for The Hobbit Online Store.
 
-## 🚀 Quick Start
+## 🚀 Getting Started
 
-### Prerequisites
-- Node.js 18+
-- npm or yarn package manager
+```bash
+cd a-ui
+npm install
+npm run dev
+```
 
-### Starting the Development Server
+Open http://localhost:3000 in your browser.
 
-1. **Navigate to the UI module directory:**
-   ```bash
-   cd a-ui
-   ```
+## Scripts
 
-2. **Install dependencies (if not already installed):**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Access the application:**
-   - Open your browser and go to: **http://localhost:3000**
-   - The application will automatically reload when you make changes
-
-### Available Scripts
-
-- `npm run dev` - Start development server (recommended)
+- `npm run dev` - Start development server
 - `npm run build` - Build for production
-- `npm run start` - Start production server (requires build first)
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
-- `npm test` - Run tests
-- `npm run test:watch` - Run tests in watch mode
-- `npm run test:coverage` - Run tests with coverage report
+- `npm run test` - Run tests
 
-### Development URLs
+## Tech Stack
 
-- **Main Application**: http://localhost:3000
-- **React Query Devtools**: Available in development mode
-- **Redux DevTools**: Compatible with browser extension
-
-### Troubleshooting
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- React Query
+- Redux Toolkit
 
 If you encounter a 404 error:
 1. Make sure you're accessing http://localhost:3000 (not a different port)
